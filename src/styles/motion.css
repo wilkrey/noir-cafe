@@ -1,0 +1,408 @@
+/* ==========================================================================
+   Motion layer · Premium Motion & Details
+   Только transform, opacity и clip-path. Скрытые состояния reveal-элементов
+   включаются классом .motion-ready (его ставит reveal.js), поэтому без JS
+   или при сбое модулей контент виден сразу.
+   ========================================================================== */
+
+@keyframes riseIn {
+  from { opacity: 0; transform: translate3d(0, 14px, 0); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes lineIn {
+  from { transform: translate3d(0, 105%, 0); }
+  to { transform: none; }
+}
+
+@keyframes menuIn {
+  from { opacity: 0; transform: translate3d(0, 10px, 0); }
+  to { opacity: 1; transform: none; }
+}
+
+/* --- Intro hero: текст за ~1.2 с, фото и карточка после --------------------- */
+
+.hero .line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+
+.hero .line > span {
+  display: block;
+  animation: lineIn 1.1s var(--ease-out) both;
+}
+
+.hero .line + .line > span {
+  animation-delay: 0.12s;
+}
+
+.hero__text > .kicker {
+  animation: riseIn 0.9s var(--ease-out) both;
+}
+
+.hero__lead {
+  animation: riseIn 0.9s 0.5s var(--ease-out) both;
+}
+
+.hero .actions {
+  animation: riseIn 0.9s 0.7s var(--ease-out) both;
+}
+
+.hero__frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  background: var(--cream);
+  box-shadow: var(--shadow-md);
+}
+
+.hero__media img {
+  box-shadow: none;
+  animation: heroImage 1.4s 0.15s var(--ease-out) backwards;
+}
+
+@keyframes heroImage {
+  from { opacity: 0; transform: scale(1.02); }
+  to { opacity: 1; transform: none; }
+}
+
+.hero__card {
+  animation: riseIn 1s 1.05s var(--ease-out) both;
+}
+
+@media (min-width: 900px) {
+  .hero__frame {
+    border-radius: var(--r-xl);
+  }
+}
+
+/* --- Reveal: варианты появления, каждый блок — один раз ---------------------- */
+
+.motion-ready .reveal--left:not(.is-visible) {
+  transform: translate3d(-36px, 0, 0);
+}
+
+.motion-ready .reveal--right:not(.is-visible) {
+  transform: translate3d(36px, 0, 0);
+}
+
+.motion-ready .reveal--scale:not(.is-visible) {
+  transform: scale(0.97);
+}
+
+.reveal--left,
+.reveal--right {
+  transition-duration: 1.1s;
+}
+
+.reveal--scale {
+  transition-duration: 1s;
+}
+
+/* Группа: контейнер только наблюдается, дети появляются со стаггером */
+.motion-ready .reveal--group:not(.is-visible) {
+  opacity: 1;
+  transform: none;
+}
+
+.motion-ready .reveal--group:not(.is-visible) > * {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+}
+
+.reveal--group > * {
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+.reveal--group > :nth-child(2) { transition-delay: 0.1s; }
+.reveal--group > :nth-child(3) { transition-delay: 0.2s; }
+.reveal--group > :nth-child(4) { transition-delay: 0.3s; }
+
+/* --- Изображения: мягкое проявление opacity + scale 1.02 → 1 -------------------
+   Контейнер .reveal--image только наблюдается. Сама картинка плавно
+   проявляется; маски, clip-path и очерёдность отсутствуют.
+   Для фото с параллаксом меняется только opacity, чтобы не конфликтовать
+   с построчным обновлением transform. */
+
+.motion-ready .reveal--image:not(.is-visible) {
+  opacity: 1;
+  transform: none;
+}
+
+.motion-ready .reveal--image:not(.is-visible) img {
+  opacity: 0;
+}
+
+.motion-ready .reveal--image:not(.is-visible):not([data-parallax]) img {
+  transform: scale(1.02);
+}
+
+.reveal--image:not([data-parallax]) img {
+  transition: opacity 1.2s var(--ease-out), transform 1.4s var(--ease-out);
+}
+
+.reveal--image[data-parallax] img {
+  transition: opacity 1.2s var(--ease-out);
+}
+
+/* --- Параллакс: только desktop с мышью, без reduced-motion ------------------ */
+
+.process__photo {
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  background: var(--espresso-2);
+}
+
+@media (min-width: 900px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  [data-parallax] img {
+    transform: translate3d(0, var(--py, 0px), 0) scale(1.06);
+    will-change: transform;
+  }
+}
+
+/* --- Шапка: при прокрутке компактнее, плотнее фон, мягкая тень ------------- */
+
+.logo {
+  transition: font-size 0.45s var(--ease-out);
+}
+
+.site-header__inner {
+  transition: height 0.45s var(--ease-out);
+}
+
+.site-header.is-scrolled {
+  background: rgba(251, 247, 240, 0.9);
+  -webkit-backdrop-filter: blur(14px) saturate(1.1);
+  backdrop-filter: blur(14px) saturate(1.1);
+  box-shadow: 0 10px 30px -22px rgba(59, 42, 32, 0.45);
+}
+
+.site-header.is-scrolled .site-header__inner {
+  height: 3.75rem;
+}
+
+.site-header.is-scrolled .logo {
+  font-size: 1.3rem;
+}
+
+/* Мобильное меню: пункты появляются по очереди */
+.mobile-menu.is-open li {
+  animation: menuIn 0.6s var(--ease-out) both;
+}
+
+.mobile-menu.is-open li:nth-child(2) { animation-delay: 0.05s; }
+.mobile-menu.is-open li:nth-child(3) { animation-delay: 0.1s; }
+.mobile-menu.is-open li:nth-child(4) { animation-delay: 0.15s; }
+.mobile-menu.is-open li:nth-child(5) { animation-delay: 0.2s; }
+
+/* --- Кнопки и ссылки -------------------------------------------------------- */
+
+.btn__arrow {
+  display: inline-flex;
+  width: 1rem;
+  height: 1rem;
+  margin-left: -0.15rem;
+  transition: transform 0.35s var(--ease-out);
+}
+
+.btn__arrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+.btn--primary:hover .btn__arrow {
+  transform: translateX(4px);
+}
+
+.btn--primary:active {
+  background: var(--espresso-deep);
+}
+
+/* Вторичная кнопка: заливка выезжает снизу */
+.btn--ghost {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.btn--ghost::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--cream);
+  transform: scaleY(0);
+  transform-origin: 50% 100%;
+  transition: transform 0.45s var(--ease-out);
+}
+
+.btn--ghost:hover {
+  background: transparent;
+}
+
+.btn--ghost:hover::before {
+  transform: scaleY(1);
+}
+
+.btn--ghost:active::before {
+  background: var(--cream-2);
+}
+
+.footer__nav a,
+.footer__contact a {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0 1px;
+  transition: background-size 0.45s var(--ease-out), color var(--dur) var(--ease);
+}
+
+.footer__nav a:hover,
+.footer__contact a:hover {
+  background-size: 100% 1px;
+}
+
+.icon-btn {
+  transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease), transform var(--dur-micro) var(--ease-out), opacity var(--dur) var(--ease);
+}
+
+.icon-btn:active:not(:disabled) {
+  transform: scale(0.94);
+}
+
+.icon-btn svg {
+  transition: transform 0.35s var(--ease-out);
+}
+
+#gallery-prev:hover:not(:disabled) svg {
+  transform: translateX(-2px);
+}
+
+#gallery-next:hover:not(:disabled) svg {
+  transform: translateX(2px);
+}
+
+/* --- Меню: индикатор скользит между вкладками ------------------------------- */
+
+.menu__tabs {
+  position: relative;
+}
+
+.menu__tab {
+  position: relative;
+  z-index: 1;
+  transition: color var(--dur) var(--ease), transform var(--dur-micro) var(--ease-out);
+}
+
+.menu__tab:active {
+  transform: scale(0.98);
+}
+
+.menu__indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 0;
+  height: 0;
+  border-radius: var(--r-sm);
+  background: var(--milk);
+  box-shadow: var(--shadow-sm);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu__indicator.is-ready {
+  opacity: 1;
+  transition: transform 0.5s var(--ease-out), width 0.5s var(--ease-out), height 0.5s var(--ease-out);
+}
+
+.menu__tabs.has-indicator .menu__tab[aria-selected='true'] {
+  background: transparent;
+  box-shadow: none;
+}
+
+.menu-item__price {
+  transition: color var(--dur) var(--ease);
+}
+
+.menu-item:hover .menu-item__price {
+  color: var(--caramel-text);
+}
+
+/* --- Галерея и лайтбокс ----------------------------------------------------- */
+
+.gallery__frame img {
+  transition: opacity 1.2s var(--ease-out), transform 1.2s var(--ease-out);
+}
+
+.gallery__figure:hover .gallery__frame img {
+  transform: scale(1.02);
+}
+
+.gallery__progress span {
+  transition: transform 0.5s var(--ease-out);
+}
+
+.lightbox {
+  transition: opacity 0.4s var(--ease-out), visibility 0s linear 0.4s;
+}
+
+.lightbox.is-open {
+  transition: opacity 0.4s var(--ease-out), visibility 0s;
+}
+
+.lightbox img {
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 0.45s var(--ease-out), transform 0.45s var(--ease-out);
+}
+
+.lightbox.is-open img {
+  opacity: 1;
+  transform: none;
+}
+
+/* Цифры не прыгают при счёте */
+.figures dd[data-count] {
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- Мобильные: короче и проще --------------------------------------------- */
+
+@media (max-width: 899px) {
+  .motion-ready .reveal--left:not(.is-visible),
+  .motion-ready .reveal--right:not(.is-visible) {
+    transform: translate3d(0, 18px, 0);
+  }
+
+  .hero .line > span {
+    animation-duration: 0.9s;
+  }
+
+  .hero__media img {
+    animation-duration: 1s;
+  }
+}
+
+/* --- prefers-reduced-motion: без движения, состояния сразу конечные ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-delay: 0ms !important;
+  }
+
+  [data-parallax] img {
+    transform: none !important;
+  }
+
+  .menu__indicator {
+    transition: none !important;
+  }
+}

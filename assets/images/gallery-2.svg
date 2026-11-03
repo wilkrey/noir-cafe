@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1d1512"/>
+      <stop offset="100%" stop-color="#0b0806"/>
+    </linearGradient>
+    <radialGradient id="window" cx="30%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#e9cf9a" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#e9cf9a" stop-opacity="0.04"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <!-- Окно -->
+  <rect x="60" y="80" width="680" height="560" rx="8" fill="#241a14"/>
+  <rect x="84" y="104" width="632" height="512" fill="url(#window)"/>
+  <rect x="396" y="104" width="10" height="512" fill="#120d0a"/>
+  <rect x="84" y="352" width="632" height="10" fill="#120d0a"/>
+  <!-- Стол -->
+  <rect x="120" y="700" width="560" height="22" rx="4" fill="#3a2b23"/>
+  <rect x="150" y="722" width="14" height="200" fill="#241a14"/>
+  <rect x="636" y="722" width="14" height="200" fill="#241a14"/>
+  <!-- Чашка -->
+  <path d="M320 600 h120 v70 a60 60 0 0 1 -120 0 Z" fill="#fbf6ec" opacity="0.85"/>
+  <ellipse cx="380" cy="600" rx="60" ry="10" fill="#3a2b23"/>
+  <!-- Книга -->
+  <rect x="470" y="640" width="150" height="60" rx="3" fill="#8c5a36" transform="rotate(-6 545 670)"/>
+  <rect x="470" y="652" width="150" height="4" fill="#e9cf9a" opacity="0.4" transform="rotate(-6 545 670)"/>
+</svg>

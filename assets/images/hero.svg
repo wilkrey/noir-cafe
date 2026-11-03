@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
+  <defs>
+    <radialGradient id="warm" cx="72%" cy="38%" r="55%">
+      <stop offset="0%" stop-color="#e9cf9a" stop-opacity="0.55"/>
+      <stop offset="35%" stop-color="#b8925a" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#120d0a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1d1512"/>
+      <stop offset="60%" stop-color="#120d0a"/>
+      <stop offset="100%" stop-color="#0b0806"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a2b23"/>
+      <stop offset="100%" stop-color="#171010"/>
+    </linearGradient>
+    <linearGradient id="machine" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8c5a36"/>
+      <stop offset="50%" stop-color="#4a3327"/>
+      <stop offset="100%" stop-color="#2a1f19"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.08"/></feComponentTransfer>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#wall)"/>
+  <rect width="1600" height="1000" fill="url(#warm)"/>
+
+  <!-- Окно с медным светом -->
+  <g opacity="0.9">
+    <rect x="1080" y="120" width="380" height="420" rx="6" fill="#241a14"/>
+    <rect x="1096" y="136" width="348" height="388" fill="#e9cf9a" opacity="0.14"/>
+    <rect x="1262" y="136" width="8" height="388" fill="#120d0a"/>
+    <rect x="1096" y="326" width="348" height="8" fill="#120d0a"/>
+  </g>
+
+  <!-- Подвесные лампы -->
+  <g>
+    <line x1="420" y1="0" x2="420" y2="260" stroke="#3a2b23" stroke-width="2"/>
+    <path d="M380 300 Q420 250 460 300 L448 330 L392 330 Z" fill="#2a1f19"/>
+    <ellipse cx="420" cy="330" rx="62" ry="16" fill="#e9cf9a" opacity="0.8" filter="url(#soft)"/>
+    <line x1="820" y1="0" x2="820" y2="200" stroke="#3a2b23" stroke-width="2"/>
+    <path d="M780 240 Q820 190 860 240 L848 270 L792 270 Z" fill="#2a1f19"/>
+    <ellipse cx="820" cy="270" rx="58" ry="14" fill="#e9cf9a" opacity="0.7" filter="url(#soft)"/>
+  </g>
+
+  <!-- Барная стойка -->
+  <rect x="0" y="640" width="1600" height="360" fill="url(#bar)"/>
+  <rect x="0" y="636" width="1600" height="8" fill="#b8925a" opacity="0.35"/>
+
+  <!-- Эспрессо-машина -->
+  <g transform="translate(560 360)">
+    <rect x="0" y="0" width="420" height="290" rx="22" fill="url(#machine)"/>
+    <rect x="28" y="30" width="364" height="30" rx="6" fill="#120d0a" opacity="0.55"/>
+    <rect x="58" y="92" width="304" height="10" rx="5" fill="#e9cf9a" opacity="0.35"/>
+    <circle cx="110" cy="200" r="34" fill="#120d0a"/>
+    <circle cx="210" cy="200" r="34" fill="#120d0a"/>
+    <circle cx="310" cy="200" r="34" fill="#120d0a"/>
+    <circle cx="110" cy="200" r="12" fill="#e9cf9a" opacity="0.7"/>
+    <circle cx="210" cy="200" r="12" fill="#e9cf9a" opacity="0.7"/>
+    <circle cx="310" cy="200" r="12" fill="#e9cf9a" opacity="0.7"/>
+    <rect x="40" y="250" width="340" height="14" rx="4" fill="#120d0a" opacity="0.6"/>
+  </g>
+
+  <!-- Чашки на стойке -->
+  <g>
+    <path d="M1010 560 h90 v70 a45 45 0 0 1 -90 0 Z" fill="#fbf6ec" opacity="0.85"/>
+    <ellipse cx="1055" cy="560" rx="45" ry="8" fill="#3a2b23"/>
+    <path d="M1200 580 h74 v56 a37 37 0 0 1 -74 0 Z" fill="#f4ead8" opacity="0.8"/>
+    <ellipse cx="1237" cy="580" rx="37" ry="7" fill="#3a2b23"/>
+  </g>
+
+  <!-- Пар -->
+  <g fill="none" stroke="#e9cf9a" stroke-width="2" stroke-linecap="round" opacity="0.35">
+    <path d="M1048 500 q-10 -30 4 -60 q12 -28 -2 -52"/>
+    <path d="M1232 530 q-9 -26 3 -50 q10 -22 -2 -40"/>
+  </g>
+
+  <rect width="1600" height="1000" filter="url(#grain)" opacity="0.5"/>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#241a14"/>
+      <stop offset="100%" stop-color="#0b0806"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="70%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#d4b07a" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#0b0806" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <rect width="800" height="1000" fill="url(#glow)"/>
+  <!-- Полка -->
+  <rect x="80" y="260" width="640" height="12" fill="#3a2b23"/>
+  <rect x="80" y="520" width="640" height="12" fill="#3a2b23"/>
+  <!-- Мешки -->
+  <g>
+    <path d="M120 260 q-10 -120 40 -150 q50 30 40 150 Z" fill="#54403a"/>
+    <path d="M230 260 q-10 -120 40 -150 q50 30 40 150 Z" fill="#4a3327"/>
+    <path d="M340 260 q-10 -120 40 -150 q50 30 40 150 Z" fill="#54403a"/>
+  </g>
+  <!-- Весы -->
+  <rect x="410" y="440" width="180" height="80" rx="10" fill="#120d0a"/>
+  <rect x="440" y="455" width="120" height="30" rx="4" fill="#2a1f19"/>
+  <circle cx="500" cy="500" r="8" fill="#e9cf9a" opacity="0.7"/>
+  <!-- Обжарочный барабан -->
+  <circle cx="200" cy="740" r="120" fill="#2a1f19"/>
+  <circle cx="200" cy="740" r="90" fill="#120d0a"/>
+  <circle cx="200" cy="740" r="30" fill="#8c5a36" opacity="0.7"/>
+  <rect x="520" y="620" width="180" height="200" rx="12" fill="#1d1512"/>
+  <rect x="540" y="650" width="140" height="10" fill="#b8925a" opacity="0.4"/>
+</svg>

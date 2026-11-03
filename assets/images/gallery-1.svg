@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a1f19"/>
+      <stop offset="100%" stop-color="#0b0806"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="60%" r="50%">
+      <stop offset="0%" stop-color="#e9cf9a" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#0b0806" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="counter" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8c5a36"/>
+      <stop offset="100%" stop-color="#3a2b23"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <rect width="800" height="1000" fill="url(#glow)"/>
+  <!-- Лампы -->
+  <ellipse cx="200" cy="120" rx="60" ry="14" fill="#e9cf9a" opacity="0.7"/>
+  <ellipse cx="520" cy="120" rx="60" ry="14" fill="#e9cf9a" opacity="0.7"/>
+  <!-- Полки с чашками -->
+  <rect x="80" y="320" width="640" height="10" fill="#3a2b23"/>
+  <rect x="80" y="440" width="640" height="10" fill="#3a2b23"/>
+  <g fill="#fbf6ec" opacity="0.75">
+    <rect x="130" y="270" width="46" height="50" rx="6"/>
+    <rect x="260" y="270" width="46" height="50" rx="6"/>
+    <rect x="390" y="270" width="46" height="50" rx="6"/>
+    <rect x="520" y="270" width="46" height="50" rx="6"/>
+  </g>
+  <!-- Стойка -->
+  <rect x="0" y="640" width="800" height="360" fill="url(#counter)"/>
+  <rect x="0" y="632" width="800" height="10" fill="#b8925a" opacity="0.5"/>
+  <!-- Кофемолка -->
+  <rect x="330" y="520" width="140" height="120" rx="12" fill="#120d0a"/>
+  <rect x="350" y="490" width="100" height="40" rx="8" fill="#2a1f19"/>
+  <!-- Эспрессо-машина -->
+  <rect x="100" y="470" width="180" height="170" rx="14" fill="#4a3327"/>
+  <circle cx="160" cy="570" r="18" fill="#e9cf9a" opacity="0.7"/>
+  <circle cx="220" cy="570" r="18" fill="#e9cf9a" opacity="0.7"/>
+</svg>

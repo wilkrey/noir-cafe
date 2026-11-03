@@ -1,0 +1,16 @@
+{
+  "name": "noir-cafe",
+  "private": true,
+  "version": "1.0.0",
+  "description": "NOIR Café — учебный демонстрационный концепт премиальной specialty-кофейни (вымышленный бренд)",
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "dev": "node scripts/serve.mjs",
+    "check": "node scripts/check.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED"
+}

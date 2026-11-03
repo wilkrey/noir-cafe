@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1d1512"/>
+      <stop offset="100%" stop-color="#0b0806"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="45%">
+      <stop offset="0%" stop-color="#e9cf9a" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#0b0806" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <rect width="800" height="1000" fill="url(#glow)"/>
+  <!-- Заварочный стол -->
+  <rect x="80" y="620" width="640" height="24" rx="4" fill="#3a2b23"/>
+  <rect x="120" y="644" width="16" height="250" fill="#241a14"/>
+  <rect x="664" y="644" width="16" height="250" fill="#241a14"/>
+  <!-- Воронка V60 -->
+  <path d="M330 470 L470 470 L420 580 L380 580 Z" fill="#8c5a36"/>
+  <rect x="340" y="455" width="120" height="16" rx="3" fill="#b8925a"/>
+  <!-- Колба / сервер -->
+  <path d="M370 580 L430 580 L440 640 L360 640 Z" fill="#fbf6ec" opacity="0.5"/>
+  <!-- Чайник -->
+  <path d="M120 540 q40 -20 80 0 l16 90 q-56 14 -112 0 Z" fill="#54403a"/>
+  <path d="M200 520 q60 -50 120 -20" fill="none" stroke="#54403a" stroke-width="10" stroke-linecap="round"/>
+  <!-- Пар -->
+  <g fill="none" stroke="#e9cf9a" stroke-width="2" stroke-linecap="round" opacity="0.3">
+    <path d="M140 500 q-8 -22 4 -42"/>
+    <path d="M170 490 q-8 -22 4 -42"/>
+  </g>
+  <!-- Ложка и весы -->
+  <rect x="520" y="600" width="140" height="20" rx="4" fill="#120d0a"/>
+  <circle cx="620" cy="520" r="28" fill="#120d0a"/>
+  <circle cx="620" cy="520" r="18" fill="#2a1f19"/>
+</svg>

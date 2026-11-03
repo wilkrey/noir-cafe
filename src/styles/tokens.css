@@ -1,0 +1,72 @@
+/* ==========================================================================
+   NOIR Café · MODERN SOFT LUXURY
+   Молочная и кремовая база, эспрессо как основной тёмный, карамель как акцент.
+   ========================================================================== */
+
+:root {
+  /* Цвет: светлые поверхности */
+  --milk: #fbf7f0;
+  --cream: #f4ecdf;
+  --cream-2: #ede3d2;
+  --caramel-soft: #ebd3b3;
+
+  /* Цвет: тёмные поверхности и текст */
+  --espresso: #3b2a20;
+  --espresso-2: #4d3a2e;
+  --espresso-deep: #2e211a;
+  --on-espresso: #f7f0e6;
+
+  /* Акценты */
+  --caramel: #c8905a;
+  --caramel-text: #8a5a2e;
+  --caramel-on-dark: #e2b07e;
+
+  /* Служебные */
+  --muted: #7a6a5e;
+  --muted-on-dark: rgba(247, 240, 230, 0.72);
+  --line: rgba(59, 42, 32, 0.1);
+  --error: #a33a1c;
+
+  /* Скругления: разные по назначению */
+  --r-xs: 8px;
+  --r-sm: 12px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-xl: 32px;
+  --r-pill: 999px;
+
+  /* Глубина: два мягких слоя, без цветных свечений */
+  --shadow-sm: 0 1px 2px rgba(59, 42, 32, 0.05), 0 6px 16px -8px rgba(59, 42, 32, 0.14);
+  --shadow-md: 0 2px 4px rgba(59, 42, 32, 0.05), 0 18px 40px -18px rgba(59, 42, 32, 0.24);
+
+  /* Типографика: Fraunces для заголовков, Inter для текста и интерфейса */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-text: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --fs-display: clamp(2.9rem, 1.6rem + 5.4vw, 6.25rem);
+  --fs-h2: clamp(2.1rem, 1.4rem + 2.6vw, 3.75rem);
+  --fs-h3: clamp(1.35rem, 1.2rem + 0.6vw, 1.7rem);
+  --fs-lead: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
+  --fs-body: 1rem;
+  --fs-small: 0.9375rem;
+  --fs-caption: 0.8125rem;
+
+  /* Сетка и пространство */
+  --gutter: clamp(1rem, 0.6rem + 2vw, 2.5rem);
+  --container: min(1280px, 100% - 2 * var(--gutter));
+  --gap: clamp(1.25rem, 0.9rem + 1.6vw, 2.25rem);
+  --section-y: clamp(4.5rem, 3rem + 6vw, 8rem);
+  --header-h: 4.5rem;
+  --touch: 48px;
+
+  /* Движение */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur: 0.35s;
+  --dur-micro: 0.22s;
+
+  --z-header: 100;
+  --z-overlay: 200;
+
+  color-scheme: light;
+}
