@@ -7,25 +7,13 @@
 
 ## Скриншоты
 
-<p align="center">
-  <img src="docs/screenshots/1.png" width="100%" alt="NOIR Café — экран 1">
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/2.png" width="100%" alt="NOIR Café — экран 2">
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/3.png" width="100%" alt="NOIR Café — экран 3">
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/4.png" width="100%" alt="NOIR Café — экран 4">
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/5.png" width="100%" alt="NOIR Café — экран 5">
-</p>
+<div align="center">
+  <img src="docs/screenshots/1.png" width="49%" alt="NOIR Café — экран 1">
+  <img src="docs/screenshots/2.png" width="49%" alt="NOIR Café — экран 2">
+  <img src="docs/screenshots/3.png" width="49%" alt="NOIR Café — экран 3">
+  <img src="docs/screenshots/4.png" width="49%" alt="NOIR Café — экран 4">
+  <img src="docs/screenshots/5.png" width="49%" alt="NOIR Café — экран 5">
+</div>
 
 ## Запуск
 
