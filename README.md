@@ -1,10 +1,31 @@
 # NOIR Café
 
 [☕ Открыть живую демоверсию](https://wilkrey.github.io/noir-cafe/)
-Демонстрационный концепт вымышленной specialty-кофейни для портфолио веб-студии. **Это не реальное заведение.**
 
 Демонстрационный концепт вымышленной specialty-кофейни для портфолио веб-студии.
 **Это не реальное заведение.** Адреса, телефоны, цены, отзывы и цитаты выдуманы.
+
+## Скриншоты
+
+<p align="center">
+  <img src="docs/screenshots/1.png" width="100%" alt="NOIR Café — экран 1">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/2.png" width="100%" alt="NOIR Café — экран 2">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/3.png" width="100%" alt="NOIR Café — экран 3">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/4.png" width="100%" alt="NOIR Café — экран 4">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/5.png" width="100%" alt="NOIR Café — экран 5">
+</p>
 
 ## Запуск
 
